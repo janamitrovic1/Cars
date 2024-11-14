@@ -1,0 +1,24 @@
+korisnik
+id
+ime
+prezime
+user
+email
+br telefona
+password
+
+
+proizvod
+id
+ime
+kategorija
+cena
+model
+
+
+narudzbina
+id korisnika
+id proizvoda
+datum
+adresa dostave
+
