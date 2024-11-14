@@ -9,7 +9,7 @@ export const Nav = ()=>{
                 <ul className="flex flex-row gap-4">
                     <li><Link href="/">Home</Link></li>
                     <li><Link href="/">Products</Link></li>
-                    <li><Link href="">About</Link></li>
+                    <li><Link href="/">About</Link></li>
                 </ul>
             </div>
             <div>
