@@ -10,7 +10,6 @@ export default function SignInPage(){
         username: "",
         password: ""
     });
-
   const router = useRouter();
 
   const handleSubmit = async(e: any) => {

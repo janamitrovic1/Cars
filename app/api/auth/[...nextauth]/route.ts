@@ -72,11 +72,14 @@ const handler = NextAuth({
           async signIn({ user, account, profile, email, credentials }) {
             return true;
           },
-          async jwt({ token, account, profile }) {
+          async jwt({ token }) {
+            const user = await prisma.korisnik.findFirst({ where: {
+              id: token.sub,
+            }});
+            token.name = user?.username;
             return token;
           },
-          async session({ session, token, user }) {
-            console.log(session, token, user);
+          async session({ session, token, user}) {
             return session;
           },
         },
