@@ -2,8 +2,8 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
 import { prisma } from "@/prisma/prisma";
-import LoginSchema from "@/components/zodschemas/LoginSchema";
-import RegisterSchema from "@/components/zodschemas/RegisterSchema";
+import LoginSchema from "@/utils/zodschemas/LoginSchema";
+import RegisterSchema from "@/utils/zodschemas/RegisterSchema";
 
 const handler = NextAuth({
   providers: [
