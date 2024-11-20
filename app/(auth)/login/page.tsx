@@ -17,13 +17,18 @@ export default function SignInPage() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
+      setErrors({});
       const validate = LoginSchema.safeParse(formData);
       if (validate.success) {
         const res = await signIn('SignIn', {
           redirect: false,
           ...validate.data
         });
-        if (!res?.ok) throw new Error(res?.error?.toString());
+        if (!res?.ok) 
+          setErrors((prevErrors : any) => ({
+            ...prevErrors,
+            username: [res?.error?.toString()],
+          }));
         else router.replace('/');
       } else 
           setErrors(validate.error.flatten().fieldErrors);

@@ -21,14 +21,18 @@ const SignUpPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      setErrors({});
       const validate = RegisterSchema.safeParse(formData); 
       if(validate.success){
         const res = await signIn('SignUp', {
           redirect: false,
           ...validate.data
         });
-        if (!res?.ok) 
-          throw new Error(res?.error?.toString());
+        if (!res?.ok)
+          setErrors((prevErrors : any) => ({
+            ...prevErrors,
+            username: [res?.error?.toString()],
+          }));
         else 
           router.push('/');
       }
