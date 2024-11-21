@@ -22,3 +22,15 @@ model Korisnik{
   BrTelefona String
   password String
 }
+
+model Proizvod{
+  id String @id @default(uuid())
+  ime String
+  slika String                      // cuvace se kao URL
+  kategorija String
+  cena Float
+  model String
+  boja String
+  brVrata Int @default(4)
+  description String?
+}
