@@ -13,7 +13,11 @@
     --foreground: #ededed;
   }
 }
-
+@layer utilities{
+  .heading{
+    @apply px-3 py-3 text-white bg-black uppercase font-work-sans font-extrabold sm:text-[54px] sm:leading-[64px] text-[36px] leading-[46px] max-w-5xl text-center my-5; 
+  }
+}
 body {
   color: var(--foreground);
   background: var(--background);
