@@ -13,6 +13,7 @@
     "@prisma/client": "^5.22.0",
     "@tailwindcss/typography": "^0.5.15",
     "bcrypt": "^5.1.1",
+    "lucide-react": "^0.461.0",
     "next": "15.0.3",
     "next-auth": "^4.24.10",
     "react": "^18.2.0",

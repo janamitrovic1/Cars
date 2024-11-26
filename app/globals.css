@@ -11,7 +11,6 @@
 }
 
 @layer utilities {
-  
     .orange_container {
         @apply w-full bg-primary min-h-[530px] pattern flex justify-center items-center flex-col py-10 px-6;
     }
@@ -22,6 +21,18 @@
 
     .sub-heading {
         @apply font-medium text-[20px] text-white max-w-2xl text-center break-words;
+     }
+
+    .search_form{
+        @apply mt-8 px-5 max-w-3xl w-full min-h-[80px] bg-white border-black border-[5px] rounded-[80px] flex flex-row gap-5 text-[24px] font-bold items-center overflow-auto  ;
+    }
+
+    .search-input {
+        @apply flex-1 font-bold placeholder:font-semibold placeholder:text-black-100 w-full h-auto outline-none;
+    }
+
+    .search-btn {
+        @apply size-[50px] rounded-full bg-black flex justify-center items-center !important;
     }
 
     .pattern {
