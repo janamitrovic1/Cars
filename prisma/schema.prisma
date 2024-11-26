@@ -21,16 +21,45 @@ model Korisnik{
   email String @unique
   BrTelefona String
   password String
+  listaZelja ListaZelja[]
+  korpa Korpa[]
 }
 
 model Proizvod{
   id String @id @default(uuid())
   ime String
   slika String                      // cuvace se kao URL
-  kategorija String
-  cena Float
+  marka String
   model String
-  boja String
-  brVrata Int @default(4)
+  karoserija String
+  godiste Int @db.Year
+  gorivo String
+  kubikaza Int
+  snagaMotora String 
+  cena Float
+  spoljasnjaBoja String
+  unutrasnjaBoja String
+  brSedista Int 
+  brVrata Int 
+  zemljaUvoza String
   description String?
+  listaZelja ListaZelja[]
+  korpa Korpa[]
+}
+
+model ListaZelja{
+  korisnik_id String 
+  proizvod_id String
+  korisnik    Korisnik  @relation(fields: [korisnik_id], references: [id])
+  proizvod    Proizvod  @relation(fields: [proizvod_id], references: [id])
+  @@id([korisnik_id, proizvod_id])
+}
+
+model Korpa{
+  korisnik_id String 
+  proizvod_id String
+  kolicina Int
+  korisnik  Korisnik  @relation(fields: [korisnik_id], references: [id])
+  proizvod  Proizvod  @relation(fields: [proizvod_id], references: [id])
+  @@id([korisnik_id, proizvod_id])
 }
