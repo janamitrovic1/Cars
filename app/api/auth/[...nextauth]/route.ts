@@ -1,11 +1,11 @@
-import NextAuth from "next-auth";
+import NextAuth, { AuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
 import { prisma } from "@/prisma/prisma";
 import LoginSchema from "@/utils/zodschemas/LoginSchema";
 import RegisterSchema from "@/utils/zodschemas/RegisterSchema";
 
-const handler = NextAuth({
+export const authOptions: AuthOptions = {
   providers: [
     CredentialsProvider({
       id: "SignIn",
@@ -92,10 +92,12 @@ const handler = NextAuth({
     },
     async jwt({ token }) {
       const user = await prisma.korisnik.findFirst({ where: { id: token.sub } });
+      token.id = user?.id;
       token.name = user?.username;
       return token;
     },
-    async session({ session, token, user }) {
+    async session({ session, token } : any) {
+      session.user.id = token.id;
       return session;
     },
   },
@@ -103,6 +105,8 @@ const handler = NextAuth({
     signIn: "/login",
   },
   secret: process.env.NEXTAUTH_SECRET,
-});
+}
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
