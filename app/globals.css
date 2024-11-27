@@ -11,6 +11,9 @@
 }
 
 @layer utilities {
+    .navigation-bar{
+        @apply flex flex-row py-3 px-5 justify-between items-center uppercase font-semibold bg-white shadow-sm text-black; 
+    }
     .orange_container {
         @apply w-full bg-primary min-h-[530px] pattern flex justify-center items-center flex-col py-10 px-6;
     }
