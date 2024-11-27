@@ -31,11 +31,16 @@ export const workSans = localFont(
         weight:'400',
         style:'normal'
       },{
-        path:'./fonts/WorkSans-Thin.ttf',
-        weight:'200',
+        path:'./fonts/WorkSans-Light.ttf',
+        weight:'300',
         style:'normal'
       },{
         path:'./fonts/WorkSans-ExtraLight.ttf',
+        weight:'200',
+        style:'normal'
+      },
+      {
+        path:'./fonts/WorkSans-Thin.ttf',
         weight:'100',
         style:'normal'
       },
@@ -46,6 +51,9 @@ export const workSans = localFont(
 export const metadata: Metadata = {
   title: "Cars",
   description: "Find Car For Your Needs",
+  icons: {
+    icon: "./favicon.ico", 
+  },
 };
 
 export default function RootLayout({

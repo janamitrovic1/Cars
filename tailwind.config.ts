@@ -53,6 +53,12 @@ const config: Config = {
         },
     },
     plugins: [tailwindcssAnimate,typography],
+    variants: {
+        extend: {
+          opacity: ["data-[headlessui-state=open]"],
+          scale: ["data-[headlessui-state=open]"],
+        },
+      },
 };
 
 export default config;
