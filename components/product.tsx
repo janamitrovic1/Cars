@@ -1,21 +1,56 @@
-export default function Product(){
-    return(
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <img className="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="Car image" />
-            <div className="p-5">
-                <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Car name</h5>
-                </a>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Car description</p>
-                <div className="flex items-center justify-between">
-                    <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        Add to cart
-                    </a>
-                    <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        Bookmark
-                    </a>
-                </div>
+import Image from "next/image";
+import Link from "next/link";
+import { EyeIcon } from "lucide-react";
+import { Button } from "@headlessui/react";
+import { formatDate } from "@/lib/utils";
+
+export default function Product ({post}:{post: ProductType}){
+
+    const {_createdAt, views,marka,model,_id,image,description } = post;
+  return (
+    <li className='product-card group'>
+
+        <div className='flex-between'>
+            <p className='product-card_date'>
+                {formatDate(_createdAt)}
+            </p>
+            <div className='flex gap'>
+                <EyeIcon className='size-6 text-secondary-300 group-hover:text-primary transition-all duration-500'/>
+                <span className='text-16-medium'>{views}</span>
             </div>
         </div>
-    );
+        
+
+        <div className='flex-between mt-5 gap-5'>
+            <div className='flex-1'>
+                {/* <Link href={`/user/${authorId}`}>
+                    <p className='text-16-medium line-clamp-1'>{name}</p>
+                </Link> */}
+                <Link href={`/products/${post._id}`}>
+                    <h3 className='text-26-semibold line-clamp-1'>{model}</h3>
+                </Link>
+            </div>
+            <Link href={`/user/`}>
+                <Image src="https://placehold.co/600x400" alt="placeholder" width={48} height={48} className="rounded-full"/>
+            </Link>
+        </div>
+
+        <Link href={`/products/${post._id}`}>
+            <p className='product-card_desc'>{description}</p>
+            
+            <Image src={image} alt="placeholder"  className='product-card_img'width={350} height={164}/>
+        </Link>
+
+        <div className='flex-between gap-3 mt-5'>
+            <Link href={`/?query=${marka.toLowerCase()}`}>
+                <p className='text-16-medium'>{marka}</p>
+            </Link>
+            <Button className='product-card_btn' asChild>
+                <Link href={`/products/${_id}`}>
+                    Details
+                </Link>
+            </Button>
+        </div>
+    </li>
+  )
 }

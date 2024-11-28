@@ -21,11 +21,11 @@ const config: Config = {
                     DEFAULT: "#F96900",
                 },
                 secondary: {
-                    "300":"A8DCD1",
+                    "300":"#A8DCD1",
                     DEFAULT:"#DCE2C8",
 
                 },
-                third:"",
+                third:"#65DEF1",
                 black: {
                     "100": "#333333",
                     "200": "#141413",

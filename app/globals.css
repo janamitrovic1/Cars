@@ -11,7 +11,43 @@
 }
 
 @layer utilities {
+    .flex-between {
+        @apply flex justify-between items-center;
+    }
 
+    .text-30-extrabold {
+        @apply text-[30px] font-extrabold text-white;
+    }
+
+    .text-30-bold {
+        @apply text-[30px] font-bold text-black;
+    }
+
+    .text-30-semibold {
+        @apply font-semibold text-[30px] text-black;
+    }
+
+    .text-26-semibold {
+        @apply font-semibold text-[26px] text-black;
+    }
+
+    .text-24-black {
+        @apply text-[24px] font-black text-black;
+    }
+
+    .text-20-medium {
+        @apply font-medium text-[20px] text-black;
+    }
+
+    .text-16-medium {
+        @apply font-medium text-[16px] text-black;
+    }
+
+    .text-14-normal {
+        @apply font-normal text-sm text-white-100/80;
+    }
+
+    
     /*  NAVBAR  */
 
     .navigation-bar{
@@ -63,6 +99,39 @@
     .dropdown-menuitem{
         @apply block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none
     }
+    /* PRODUCTS SECTION */
+
+    .section_container {
+        @apply px-6 py-10 max-w-7xl mx-auto;
+    }
+
+    .card_grid {
+        @apply grid md:grid-cols-3 sm:grid-cols-2 gap-5;
+    }
+
+    .no-result {
+        @apply text-black-100 text-sm font-normal;
+    }
+    .product-card {
+        @apply bg-white border-[5px] border-black py-6 px-5 rounded-[22px] shadow-200 hover:border-primary transition-all duration-500 hover:shadow-100 hover:bg-slate-100;
+    }
+
+    .product-card_date {
+        @apply font-medium text-[16px] bg-secondary-300 px-4 py-2 rounded-full transition-all duration-500 group-hover:bg-primary-500;
+    }
+
+    .product-card_desc {
+        @apply font-normal text-[16px] line-clamp-2 my-3 text-black-100 break-all;
+    }
+
+    .product-card_img {
+        @apply w-full h-[164px] rounded-[10px] object-cover;
+    }
+
+    .product-card_btn {
+        @apply rounded-full bg-black-200 transition-all duration-500 group-hover:bg-primary font-medium text-[16px] text-white px-5 py-3 !important;
+    }
+
     .pattern {
         background-image: linear-gradient(
                 to right,
