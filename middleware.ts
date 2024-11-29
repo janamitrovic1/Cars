@@ -7,6 +7,6 @@ export const config = {
        * - /login
        * - /register
        */
-      "/((?!login|register).*)",
+      "/((?!login|register|api).*)",
     ],
   };

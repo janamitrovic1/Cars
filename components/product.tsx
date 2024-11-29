@@ -3,17 +3,20 @@ import Link from "next/link";
 import { EyeIcon } from "lucide-react";
 import { Button } from "@headlessui/react";
 import { Proizvod } from "@prisma/client";
-    
-export type ProductType = Proizvod;
-export default function Product ({post}:{post: ProductType}){
 
-    const {id,ime,model,slika,kategorija,marka,cena,godiste,description} = post;
+interface ProductProps {
+    post: Proizvod
+}
+    
+export default function Product ({ post } : ProductProps){
+
+    const {id,model,slika,karoserija,marka,cena,godiste,description} = post;
   return (
     <li className='product-card group'>
 
         <div className='flex-between'>
             <p className='product-card_date'>
-                {kategorija}
+                {karoserija}
             </p>
             <div className='flex gap'>
                 <EyeIcon className='size-6 text-secondary-300 group-hover:text-primary transition-all duration-500'/>
@@ -28,7 +31,7 @@ export default function Product ({post}:{post: ProductType}){
                     <p className='text-16-medium line-clamp-1'>{marka}</p>
                 </Link>
                 <Link href={`/api/product/${post.id}`}>
-                    <h3 className='text-26-bold line-clamp-1'>{ime}</h3>
+                    <h3 className='text-26-bold line-clamp-1'>{marka + ' ' + model}</h3>
                 </Link>
                 <h5 className="text-godiste line-clamp-1">{godiste}.god</h5>
             </div>

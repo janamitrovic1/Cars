@@ -22,10 +22,6 @@ export const Nav = ()=>{
                             <span>Products</span>
                         </Link>
 
-                        <Link href="/api/auth/signout">
-                            <span>Sign out</span>
-                        </Link>
-
                         {/* DROPDOWN KOJI NE RADI*/}
                         <Menu as="div" className="relative inline-block text-left">
                             <MenuButton>

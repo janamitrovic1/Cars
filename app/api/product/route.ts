@@ -14,6 +14,7 @@ export async function GET(req: Request){
             return Response.json({ msg: 'No products found' }, { status: 404 });
         return Response.json({ data: products }, { status: 200 });
     } catch (error) {
+        console.log(error);
         return Response.json({ err: error }, { status: 500 });
     }
 }

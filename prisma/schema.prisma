@@ -27,7 +27,6 @@ model Korisnik{
 
 model Proizvod{
   id String @id @default(uuid())
-  ime String
   slika String                      // cuvace se kao URL
   marka String
   model String
