@@ -22,7 +22,9 @@
     .text-30-bold {
         @apply text-[30px] font-bold text-black;
     }
-
+    .text-26-bold{
+        @apply font-bold text-[26px] text-black;
+    }
     .text-30-semibold {
         @apply font-semibold text-[30px] text-black;
     }
@@ -47,6 +49,9 @@
         @apply font-normal text-sm text-white-100/80;
     }
 
+    .text-godiste{
+        @apply font-medium text-sm text-black;
+    }
     
     /*  NAVBAR  */
 
@@ -113,13 +118,14 @@
         @apply text-black-100 text-sm font-normal;
     }
     .product-card {
-        @apply bg-white border-[5px] border-black py-6 px-5 rounded-[22px] shadow-200 hover:border-primary transition-all duration-500 hover:shadow-100 hover:bg-slate-100;
+        @apply bg-white border-[5px] border-black py-6 px-5 rounded-[22px] shadow-100 hover:border-black transition-all duration-500 hover:shadow-300 hover:bg-orange-100;
     }
-
     .product-card_date {
-        @apply font-medium text-[16px] bg-secondary-300 px-4 py-2 rounded-full transition-all duration-500 group-hover:bg-primary-500;
+        @apply font-medium text-[16px] sm:text-white-100 bg-secondary-300 px-4 py-2 rounded-full transition-all duration-500 group-hover:bg-primary-500;
     }
-
+    .product-cena{
+        @apply bg-yellow-400 rounded-[20px] px-4 py-2 font-semibold text-[20px] text-white;
+    }
     .product-card_desc {
         @apply font-normal text-[16px] line-clamp-2 my-3 text-black-100 break-all;
     }
