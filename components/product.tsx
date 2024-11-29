@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { EyeIcon } from "lucide-react";
 import { Button } from "@headlessui/react";
 import { Proizvod } from "@prisma/client";
 
@@ -16,7 +15,9 @@ export default function Product ({ post } : ProductProps){
             <li className='product-card group flex flex-col'>
                 <div className="flex">
                     <p className='product-card_date'>
-                        {karoserija}
+                        <Link href={`/?query=${karoserija}`}>
+                            {karoserija}
+                        </Link>
                     </p>
                 </div>
                 <div className='flex-between mt-5 gap-5'>
@@ -34,10 +35,13 @@ export default function Product ({ post } : ProductProps){
                     </div>
                 </div>
 
-                <Link href={`/products/${post.id}`}>
-                    <p className='product-card_desc'>{description}</p>
+                <p className='product-card_desc'>
+                    <Link href={`/products/${post.id}`}>
+                        {description && description?.length > 80 ? `${description?.substring(0, 80)}...` : description}
+                        {description && description?.length > 80 && (<Link href={`/products/${id}`}><a className="read-more" style={{ color: 'blue', textDecoration: 'underline' }}>Read More</a></Link> )}
+                    </Link>
+                </p>
                     <Image src={slika} alt="placeholder" className='product-card_img' width={350} height={164} />
-                </Link>
                 <div className="flex-grow" />
                 <div className='flex justify-end items-end gap-3 mt-5'>
                     <Button className='product-card_btn'>
