@@ -37,7 +37,7 @@ export default function Home({/*searchParams*/}:{
                 <ul className="mt-7 card_grid">
                 {posts?.length > 0 ? (
                     posts.map((post: Proizvod) => (
-                    <Product post={post}  key={post?.id}/>
+                        <Product post={post} key={post?.id}/>
                     ))
                 ) : (
                     <p className="no-results">No cars found</p>

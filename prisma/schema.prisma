@@ -27,7 +27,7 @@ model Korisnik{
 
 model Proizvod{
   id String @id @default(uuid())
-  slika String                      // cuvace se kao URL
+  slika String                     
   marka String
   model String
   karoserija String
