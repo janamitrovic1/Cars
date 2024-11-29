@@ -2,14 +2,14 @@
 
 import Product from "@/components/product";
 import SearchForm from "@/components/searchform";
-import { prisma } from "@/prisma/prisma";
 import { Proizvod } from "@prisma/client";
 import { useEffect, useState } from "react";
-export default function Home({searchParams}:{
-	searchParams:Promise<{query?:string}>
+
+export default function Home({/*searchParams*/}:{
+    searchParams:Promise<{query?:string}>
 }) {
     const [posts, setPosts] = useState<Proizvod[]>([]);
-	
+
     useEffect(() => {
         const run = async() => {
             const res = await fetch("/api/product?page=1&pagesize=10", {
@@ -21,9 +21,8 @@ export default function Home({searchParams}:{
         run();
     }, [])
 
-    useEffect(() => console.log(posts), [posts]);
 
-	return (
+    return (
         <div>
             <section className="orange_container">
                 <h1 className="heading mx-auto">Find Your Perfect Ride Here Where Style and QUality meet.</h1>
@@ -32,7 +31,7 @@ export default function Home({searchParams}:{
             </section>
             <section className="section_container">
                 <p className="text-30-semibold">
-                    {/* { query ? `Search results for "${query}"`:`All cars`} */}
+                    {/* { query ? Search results for "${query}":All cars} */}
                     Search results for
                 </p>
                 <ul className="mt-7 card_grid">
