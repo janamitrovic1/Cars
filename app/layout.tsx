@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import AuthProvider from "@/components/auth-provider";
-
+import { Nav } from "@/components/nav";
 export const workSans = localFont(
   {
     src :[
@@ -67,6 +67,7 @@ export default function RootLayout({
         className={workSans.variable}
       >
         <AuthProvider>
+        <Nav/>
           {children}
         </AuthProvider>
       </body>

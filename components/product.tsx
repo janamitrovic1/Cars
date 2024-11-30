@@ -41,7 +41,7 @@ export default function Product ({ post } : ProductProps){
                         {description && description?.length > 80 && (<Link href={`/products/${id}`}><a className="read-more" style={{ color: 'blue', textDecoration: 'underline' }}>Read More</a></Link> )}
                     </Link>
                 </p>
-                    <Image src={slika} alt="placeholder" className='product-card_img' width={350} height={164} />
+                    <Link href={`/products/${post.id}`}><Image src={slika} alt="placeholder" className='product-card_img' width={350} height={164} /></Link>
                 <div className="flex-grow" />
                 <div className='flex justify-end items-end gap-3 mt-5'>
                     <Button className='product-card_btn'>

@@ -52,7 +52,13 @@
     .text-godiste{
         @apply font-medium text-sm text-black;
     }
+    .tag {
+        @apply bg-secondary px-6 py-3 font-work-sans font-bold rounded-sm uppercase relative tag-tri;
+    }
     
+    .tag-tri {
+        @apply before:content-[''] before:absolute before:top-2 before:left-2 before:border-t-[10px] before:border-t-black before:border-r-[10px] before:border-r-transparent after:content-[''] after:absolute after:bottom-2 after:right-2 after:border-b-[10px] after:border-b-black after:border-l-[10px] after:border-l-transparent;
+    }
     /*  NAVBAR  */
 
     .navigation-bar{
@@ -137,7 +143,9 @@
     .product-card_btn {
         @apply rounded-full bg-black-200 transition-all duration-500 group-hover:bg-primary font-medium text-[16px] text-white px-5 py-3 !important;
     }
-
+    .cena-tag {
+        @apply font-bold text-[26px] bg-secondary-300 text-white px-5 py-2 rounded-full;
+      }
     .pattern {
         background-image: linear-gradient(
                 to right,
@@ -146,7 +154,7 @@
                 rgba(251, 232, 67, 0.6) 50.5%,
                 transparent 50.5%
         );
-        background-size: 3% 100%;
+        background-size: 6% 100%;
         background-position: center;
         background-repeat: repeat-x;
     }
