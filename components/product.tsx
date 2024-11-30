@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@headlessui/react";
 import { Proizvod } from "@prisma/client";
-
+import Wishlistbutton from "./wishlistbutton";
+import Cartbutton from "./cartbutton";
 export interface ProductProps {
     props: Proizvod
 }
@@ -12,11 +13,14 @@ export default function Product ({ props } : ProductProps){
     return (
         <>
             <li className='product-card group flex flex-col'>
-                <div className="flex">
+                <div className="flex flex-between">
                     <p className='product-card_date'>
                         <Link href={`/?query=${karoserija}`}>
                             {karoserija}
                         </Link>
+                    </p>
+                    <p className="">
+                        <Wishlistbutton props={props}></Wishlistbutton>
                     </p>
                 </div>
                 <div className='flex-between mt-5 gap-5'>
@@ -42,7 +46,8 @@ export default function Product ({ props } : ProductProps){
                 </p>
                     <Link href={`/products/${props.id}`}><Image src={slika} alt="placeholder" className='product-card_img' width={350} height={164} /></Link>
                 <div className="flex-grow" />
-                <div className='flex justify-end items-end gap-3 mt-5'>
+                <div className='flex justify-between items-center gap-3 mt-5'>
+                    <Cartbutton props={props}></Cartbutton>
                     <Button className='product-card_btn'>
                         <Link href={`/products/${id}`}>
                             Details

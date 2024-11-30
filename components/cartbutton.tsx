@@ -32,8 +32,7 @@ const Cartbutton = ({props}:ProductProps) => {
     }, [state])
   return (
     <Button onClick={addToCart} className="flex items-center justify-between">
-       <ShoppingCart /> 
-       {addedToCart ? "Remove from Cart" : "Add to Cart"}
+       {addedToCart ? <ShoppingCart fill='black' className='size-8'/> : <ShoppingCart fill='none'className='size-8'/>}
     </Button>
   )
 }

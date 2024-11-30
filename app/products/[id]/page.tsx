@@ -34,9 +34,11 @@ const Page = async ({ params }: { params: { id: string } }) => {
           <div className="space-y-5 mt-10 max-w-4xl mx-auto">
             <div className="flex-between gap-5">
               <p className="text-30-bold">Details About Vehicle</p>
-              <Wishlistbutton props={product}></Wishlistbutton>
-              <Cartbutton props={product}></Cartbutton>
-              <p className="cena-tag">{cena +" $"}</p>
+              <div className="flex flex-between gap-8">
+                <Wishlistbutton props={product}></Wishlistbutton>
+                <Cartbutton props={product}></Cartbutton>
+                <p className="cena-tag">{cena +" $"}</p>
+              </div>
             </div>
             <ProductDetailsTable props={product}></ProductDetailsTable>
           </div>

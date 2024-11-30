@@ -146,6 +146,10 @@
     .cena-tag {
         @apply font-bold text-[26px] bg-secondary-300 text-white px-5 py-2 rounded-full;
       }
+
+    .button-yellow{
+        @apply mx-auto mt-14 text-white transition transform hover:scale-105 hover:bg-orange-300 duration-500 hover:shadow-lg rounded-[20px] px-5 py-4 font-semibold bg-primary-500;
+    }
     .pattern {
         background-image: linear-gradient(
                 to right,

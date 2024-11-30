@@ -1,7 +1,7 @@
 import Product from "@/components/product";
 import SearchForm from "@/components/searchform";
 import { Proizvod } from "@prisma/client";
-
+import Link from "next/link";
 export default async function Home({searchParams}:{
     searchParams:Promise<{query?:string}>
 }) {
@@ -20,8 +20,8 @@ export default async function Home({searchParams}:{
                 <p className="sub-heading !max-w-3xl">Stop your long and tough search and find car for your needs.</p>
                 <SearchForm page={false} query={query}/>
             </section>
-            <section className="section_container">
-                <p className="text-30-semibold">
+            <section className="section_container flex flex-col items-center">
+                <p className="text-30-semibold sm:!self-start">
                     {query ? `Search results for ${query}`:`All cars`}
                 </p>
                 <ul className="mt-7 card_grid">
@@ -33,6 +33,7 @@ export default async function Home({searchParams}:{
                     <p className="no-results">No cars found</p>
                 )}
                 </ul>
+                <Link href="/products" className="button-yellow">View All</Link>
             </section>
         </div>
     );

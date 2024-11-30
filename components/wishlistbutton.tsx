@@ -33,7 +33,7 @@ const Wishlistbutton = ({props}:ProductProps) => {
   }, [state])
   return (
     <Button onClick={addToWishList} className="">
-      { wishListed ? <Heart fill='red'/> : <Heart />}
+      { wishListed ? <Heart  fill='red' stroke="none"className='size-8'/> : <Heart strokeWidth="2" className="size-8" />}
     </Button>
   )
 }
