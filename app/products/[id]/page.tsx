@@ -1,6 +1,7 @@
 import { prisma } from "@/prisma/prisma";
 import { notFound } from "next/navigation";
 import React from "react";
+import { Button } from "@headlessui/react";
 // import Link from "next/link";
 import ProductDetailsTable from "@/components/productdetailstable";
 
@@ -35,7 +36,14 @@ const Page = async ({ params }: { params: { id: string } }) => {
             </div>
             <ProductDetailsTable props={product}></ProductDetailsTable>
           </div>
+          <div className="flex flex-row">
+            <Button>
+
+            </Button>
+            <Button></Button>
+          </div>
         </section>
+
       </> 
     );
   } catch (error) {

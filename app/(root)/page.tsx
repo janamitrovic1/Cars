@@ -10,7 +10,7 @@ export default async function Home({searchParams}:{
         credentials: "include",
         cache: "no-store", // Opcija da podaci budu sveži za svaki request
       });
-      const { data: posts }: { data: Proizvod[] } = await res.json();
+    const { data: posts }: { data: Proizvod[] } = await res.json();
 
 
     return (
