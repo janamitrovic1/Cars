@@ -6,7 +6,7 @@ export default async function Home({searchParams}:{
     searchParams:Promise<{query?:string}>
 }) {
     const query = (await searchParams).query;
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/product?page=1&pagesize=10`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/product?page=1&pagesize=6`, {
         credentials: "include",
         cache: "no-store", // Opcija da podaci budu sveži za svaki request
       });
@@ -18,7 +18,7 @@ export default async function Home({searchParams}:{
             <section className="orange_container">
                 <h1 className="heading mx-auto">Find Your Perfect Ride Here Where Style and QUality meet.</h1>
                 <p className="sub-heading !max-w-3xl">Stop your long and tough search and find car for your needs.</p>
-                <SearchForm query={query}/>
+                <SearchForm page={false} query={query}/>
             </section>
             <section className="section_container">
                 <p className="text-30-semibold">

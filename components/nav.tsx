@@ -18,6 +18,9 @@ export const Nav = ()=>{
                 <div className='nav-links nav-text'>
                 {status === "authenticated" ? (
                     <>
+                        <Link href="/">
+                            <span>Home</span>
+                        </Link>
                         <Link href="/products">
                             <span>Products</span>
                         </Link>
