@@ -2,14 +2,16 @@ import { prisma } from "@/prisma/prisma";
 import { notFound } from "next/navigation";
 import React from "react";
 import { Button } from "@headlessui/react";
+import Wishlistbutton from "@/components/wishlistbutton";
 // import Link from "next/link";
 import ProductDetailsTable from "@/components/productdetailstable";
+import Cartbutton from "@/components/cartbutton";
 
 const Page = async ({ params }: { params: { id: string } }) => {
   try {
-    
+
     const product = await prisma.proizvod.findUnique({
-      where: { id: params.id },
+      where: { id: await params.id },
     });
 
     if (!product) {
@@ -32,6 +34,8 @@ const Page = async ({ params }: { params: { id: string } }) => {
           <div className="space-y-5 mt-10 max-w-4xl mx-auto">
             <div className="flex-between gap-5">
               <p className="text-30-bold">Details About Vehicle</p>
+              <Wishlistbutton props={product}></Wishlistbutton>
+              <Cartbutton props={product}></Cartbutton>
               <p className="cena-tag">{cena +" $"}</p>
             </div>
             <ProductDetailsTable props={product}></ProductDetailsTable>

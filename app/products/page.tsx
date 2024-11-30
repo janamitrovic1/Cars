@@ -8,7 +8,7 @@ const Page = async ({searchParams}:{
   searchParams:Promise<{query?:string}>
 }) => {
   const query = (await searchParams).query;
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/product?page=1&pagesize=10`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/product?page=1&pagesize=100`, {
         credentials: "include",
         cache: "no-store", // Opcija da podaci budu sveži za svaki request
       });
@@ -26,7 +26,7 @@ const Page = async ({searchParams}:{
             <ul className="mt-7 card_grid">
             {posts?.length > 0 ? (
                 posts.map((post: Proizvod) => (
-                    <Product post={post} key={post?.id}/>
+                    <Product props={post} key={post?.id}/>
                 ))
             ) : (
                 <p className="no-results">No cars found</p>

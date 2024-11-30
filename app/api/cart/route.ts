@@ -25,6 +25,7 @@ export async function POST(req: Request){
     try {
         const session : any = await getServerSession(authOptions);
         const data = await req.json();
+        console.log(data)
         const product = await prisma.korpa.create({
             data: {
                 korisnik_id: session.user.id,
