@@ -14,11 +14,16 @@
     .flex-between {
         @apply flex justify-between items-center;
     }
-
+    .search-bar{
+        @apply flex items-center bg-[#49243E] border border-[#a6787e] rounded-full px-5 py-2 w-[400px];
+    }
     .text-30-extrabold {
         @apply text-[30px] font-extrabold text-white;
     }
-
+    .icons
+    {
+    @apply flex items-center space-x-6;
+    }
     .text-30-bold {
         @apply text-[30px] font-bold text-black;
     }
@@ -171,3 +176,8 @@
 .w-md-editor-toolbar {
     padding: 10px !important;
 }
+
+/*---------PROBA----------------*/
+
+
+
