@@ -31,7 +31,6 @@ export default async function Home({
             "radial-gradient(ellipse at center, #BB8493 0%, #49243E 60%)",
         }}
       >
-        <Nav />
         <HeroSection />
       </div>
 

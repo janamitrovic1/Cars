@@ -67,6 +67,7 @@ export default function RootLayout({
         className={workSans.variable}
       >
         <AuthProvider>
+          <Nav />
           {children}
         </AuthProvider>
       </body>
