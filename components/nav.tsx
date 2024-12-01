@@ -3,7 +3,7 @@ import React from "react";
 
 const Nav = () => {
   return (
-    <header className="flex justify-between items-center px-8 py-4 border-b border-[#a6787e] sticky top-0 z-20 bg-[#49243E]">
+    <header className="flex justify-between items-center px-8 py-4  sticky top-0 z-20 bg-[#49243E]">
           {/* Logo */}
           <div className="text-2xl font-bold"><Link href="/">CARS</Link></div>
 
