@@ -7,7 +7,7 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 // import "@app/globals.css";
 export const Nav = ()=>{
 
-    const {data:session,status} = useSession();
+    const {data:session,status}: any = useSession();
 
     return <header className='navigation-bar'>
 
@@ -29,7 +29,7 @@ export const Nav = ()=>{
                         <Menu as="div" className="relative inline-block text-left">
                             <MenuButton>
                                 <div className="dropdown">
-                                    <Link href={`/profile/${session?.user?.id}`} >
+                                    <Link href={`/profile/${session?.user.id}`} >
                                         <span>{session?.user?.name}</span>  
                                     </Link>
                                     <ChevronDownIcon aria-hidden="true" className="-mr-1 size-5 text-gray-400"/>
@@ -43,7 +43,7 @@ export const Nav = ()=>{
                             >
                                 <div className="py-1">
                                     <MenuItem>
-                                        <Link href={`/profile/${session?.user?.id}`} className="dropdown-menuitem">
+                                        <Link href={`/profile/${session?.user.id}`} className="dropdown-menuitem">
                                         Profile
                                         </Link>
                                     </MenuItem>
