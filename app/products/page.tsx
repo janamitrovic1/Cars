@@ -26,7 +26,7 @@ const Page = async ({searchParams}:{
             <ul className="mt-7 card_grid">
             {posts?.length > 0 ? (
                 posts.map((post: Proizvod) => (
-                    <Product props={post} key={post?.id}/>
+                    <Product props={post} page={false} key={post?.id}/>
                 ))
             ) : (
                 <p className="no-results">No cars found</p>

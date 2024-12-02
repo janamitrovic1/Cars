@@ -2,7 +2,6 @@ import Product from "@/components/product";
 import SearchForm from "@/components/searchform";
 import { Proizvod } from "@prisma/client";
 import Link from "next/link";
-import Button2 from "@/components/button2";
 export default async function Home({searchParams}:{
     searchParams:Promise<{query?:string}>
 }) {
@@ -16,7 +15,6 @@ export default async function Home({searchParams}:{
 
     return (
         <div>
-            <Button2/>
             <section className="orange_container">
                 <h1 className="heading mx-auto">Find Your Perfect Ride Here Where Style and QUality meet.</h1>
                 <p className="sub-heading !max-w-3xl">Stop your long and tough search and find car for your needs.</p>
@@ -29,7 +27,7 @@ export default async function Home({searchParams}:{
                 <ul className="mt-7 card_grid">
                 {posts?.length > 0 ? (
                     posts.map((post: Proizvod) => (
-                        <Product props={post} key={post?.id}/>
+                        <Product props={post} page={true} key={post?.id}/>
                     ))
                 ) : (
                     <p className="no-results">No cars found</p>
